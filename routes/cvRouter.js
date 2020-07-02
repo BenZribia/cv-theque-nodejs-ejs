@@ -3,6 +3,7 @@ const CV = require('../models/CV');
 const mongoose = require('mongoose');
 const multer = require('multer');
 var moment = require('moment');
+const path = require('path');
 
 
 
@@ -80,15 +81,19 @@ cvRouter.route('/download/:id')
 .get((req, res, next)=>{
     CV.findById(req.params.id)
         .then((cv)=>{
-            res.statusCode = 200;
-            var filePath = '../public/files/'+cv.cv.replace(/^.*[\\\/]/, ''); 
+           
+
+            var filePath = path.join(__dirname, '../public/files/'+cv.cv.replace(/^.*[\\\/]/, '')) ; 
             var fileName = cv.cv.replace(/^.*[\\\/]/, '');
+            console.log(cv.cv);
             console.log(filePath);
             console.log(fileName);
 
             res.download(filePath, fileName);
 
-            res.redirect('/condidats');
+            
+
+            // res.redirect('/condidats');
         })
         .catch((err)=>{ console.log(err);
         });
