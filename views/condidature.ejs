@@ -1,0 +1,90 @@
+<div class="row mt-5">
+    <div class="col-md-6 m-auto">
+      <div class="card card-body">
+        <h1 class="text-center mb-3">
+          <i class="fas fa-user-plus"></i> Votre Condidature
+        </h1>
+
+        <form action="/condidature" method="post" enctype="multipart/form-data">
+          <div class="form-group">
+            <label for="nom">Nom</label>
+            <input
+              type="name"
+              id="nom"
+              name="nom"
+              class="form-control"
+              placeholder="Entrer votre Nom"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="prenom">Prenom</label>
+            <input
+              type="name"
+              id="prenom"
+              name="prenom"
+              class="form-control"
+              placeholder="Entrer votre Nom"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form-control"
+              placeholder="Entrer votre Email"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="name">Numer de telephone</label>
+            <input
+              type="name"
+              id="numeroDeTelephone"
+              name="numeroDeTelephone"
+              class="form-control"
+              placeholder="Entrer votre numeroDeTelephone"
+              required
+            />
+          </div>
+
+         <div class="form-group">
+          <label for="poste">Poste</label>
+          <select class="form-control" id="poste" name="poste" >
+            <% for(var i=0; i <= 1; i++) { %>
+              <option><%= postes[i] %></option>
+           <% } %>
+          </select>
+
+      </div>
+          <div class="form-group">
+            <label for="name">CV</label>
+            <input
+              type="file"
+              id="pdfFile"
+              name="pdfFile"
+              class="form-control"
+              placeholder="Votre CV"
+            />
+          </div>
+          <div class="form-group">
+            <label for="name">Message</label>
+            <input
+              type="placearea"
+              id="message"
+              name="message"
+              class="form-control"
+              placeholder="message"
+            />
+          </div>
+          
+          <button type="submit" class="btn btn-primary btn-block">
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>

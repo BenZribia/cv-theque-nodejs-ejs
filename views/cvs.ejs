@@ -1,0 +1,26 @@
+<div class="row mt-5">
+    <div class="col-md-8 m-auto">
+    <table class="table table-hover table-striped table-bordered text-center ">
+        <thead>
+          <tr>
+            <th scope="col">Nom</th>
+            <th scope="col">Prenom</th>
+            <th scope="col">Poste</th>
+            <th scope="col">Date d'inscription</th>
+            <th scope="col">Details</th>
+          </tr>
+        </thead>
+        <tbody>
+           <% for(var i=0; i < cvs.length; i++) { %>
+                <tr>
+                  <td ><%= cvs[i].nom %></td>
+                  <td><%= cvs[i].prenom %></td>
+                  <td><%= cvs[i].poste %></td>
+                  <td><%= moment( cvs[i].createdAt ).format('Do MMMM, YYYY'); %></td>
+                  <td><a href="/condidats/<%= cvs[i]._id %>">Cliquer ici</a></td>
+                </tr>
+             <% } %>
+        </tbody>
+      </table>
+    </div>
+    </div>
