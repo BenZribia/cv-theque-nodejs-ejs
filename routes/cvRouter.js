@@ -30,6 +30,11 @@ const cvRouter = express.Router();
 
 cvRouter.use(express.json());
 
+cvRouter.get('/', (req, res, next)=>{
+    res.statusCode = 200;
+    res.redirect('/condidats');
+});
+
 cvRouter.route('/condidature')
 .get((req, res, next)=>{
     postes = [ "Stage", "Stage PFE"];
