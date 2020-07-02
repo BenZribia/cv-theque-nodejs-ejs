@@ -88,7 +88,7 @@ cvRouter.route('/download/:id')
 
             res.download(filePath, fileName);
 
-            //res.redirect('/condidats');
+            res.redirect('/condidats');
         })
         .catch((err)=>{ console.log(err);
         });
